@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body>
+<div class="container m-4">
+<div class="card">
+<div class="card-header"> Formualaire d'Ajout</div>
+ <form  class="m-4" th:action="@{Modifier}" method="post" th:object="${etudiant}">
+  <table>
+         <tr>
+             <td><input type="hidden" th:field="*{id}"></td>
+        </tr>
+        <tr>
+            <td>Nom</td>
+             <td><input class="form-control" type="text" th:field="*{nom}"></td>
+             <td class="text-danger"  th:errors="*{nom}"></td>
+        </tr>
+         <tr>
+            <td>Date de naissance</td>
+             <td><input class="form-control" type="date" th:field="*{dateNaissance}"></td>
+             <td class="text-danger" th:errors="*{dateNaissance}"></td>
+        </tr>
+         <tr>
+            <td class="form-label">Email</td>
+             <td><input class="form-control" type="text" th:field="*{email}"></td>
+             <td class="text-danger" th:errors="*{email}"></td>
+        </tr>
+         <tr>
+             <td><button class="btn btn-primary" type="submit">Modifier</button></td>
+        </tr>
+  </table>
+ </form>
+</div>
+</div>
+</body>
+</html>
